@@ -1,4 +1,14 @@
 {
-  "image": "cirrusci/flutter:latest",
-  "forwardPorts": [3000]
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'NODE_VARIANT' to pick a Node version: 16, 14, 12.
+    // Append -bullseye or -buster to pin to an OS version.
+    // Use -bullseye variants on local arm64/Apple Silicon.
+    "args": {
+      "NODE_VARIANT": "16-bullseye"
+    }
+  },
+  "forwardPorts": [
+    3000
+  ]
 }
